@@ -1,5 +1,6 @@
 from exercises.json_utils import serialize_exercises
-from exercises.math_exercises import SimpleMultiplication
+from exercises.math_exercises import \
+	PiDigit, SimpleMultiplication
 
 
 if __name__ == '__main__':
@@ -7,7 +8,7 @@ if __name__ == '__main__':
 		{'label': 'Numbers',
 		 'exercises': [
 			SimpleMultiplication(),
-			
+			PiDigit(),
 		 ]},
 	)
 	
