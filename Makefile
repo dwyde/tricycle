@@ -1,5 +1,5 @@
 all:
-	python -m exercises.main
+	python -m tricycle.main
 
 .PHONY: test
 test:

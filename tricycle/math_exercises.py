@@ -1,6 +1,6 @@
 import math
 
-from exercises.base_exercise import Exercise
+from tricycle.base_exercise import Exercise
 
 
 class SimpleMultiplication(Exercise):

@@ -1,6 +1,6 @@
 import unittest
 
-from exercises.math_exercises import PiDigit, SimpleMultiplication
+from tricycle.math_exercises import PiDigit, SimpleMultiplication
 
 class TestNumberExercises(unittest.TestCase):
 	

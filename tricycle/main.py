@@ -1,7 +1,7 @@
 import os.path
 
-from exercises.json_utils import serialize_exercises
-from exercises.math_exercises import \
+from tricycle.json_utils import serialize_exercises
+from tricycle.math_exercises import \
 	PiDigit, SimpleMultiplication
 
 
