@@ -12,5 +12,6 @@ class ExercisesToJSON(json.JSONEncoder):
 			return super(ExercisesToJSON, self).default(obj)
 
 
-def serialize_exercises(*exercises):
-	return json.dumps(exercises, cls=ExercisesToJSON)
+def serialize_exercises(filename, *exercises):
+	with open(filename, 'w') as fp:
+		json.dump(exercises, fp, cls=ExercisesToJSON)
