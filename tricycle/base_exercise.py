@@ -25,6 +25,6 @@ class Exercise(object):
 			'solution': solution,
 			'title': self.title,
 			'problem': self.problem,
-			'hints': self.hint,
+			'hint': self.hint,
 		}
 
