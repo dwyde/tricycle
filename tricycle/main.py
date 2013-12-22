@@ -8,11 +8,8 @@ from tricycle.math_exercises import \
 def main():
 	serialize_exercises(
 		os.path.join('web', 'exercises.json'),
-		{'label': 'Numbers',
-		 'exercises': [
-			SimpleMultiplication(),
-			PiDigit(),
-		 ]},
+		SimpleMultiplication(),
+		PiDigit()
 	)
 
 
