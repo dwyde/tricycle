@@ -1,6 +1,25 @@
+header h1 {
+	font-size:2em;
+	margin-bottom:1em;
+}
+
 h1 {
 	margin: 0;
 	font-size: 1em;
+}
+
+#exercise-menu {
+	float:left;
+	margin-right:2em;
+}
+
+#exercise-menu ul {
+	margin:0;
+	padding:0;
+}
+
+#exercise-display {
+	float:left;
 }
 
 .answer-correct {
