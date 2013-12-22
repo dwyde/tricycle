@@ -171,4 +171,23 @@ var exercises = [
 			}
 		}
 	}()),
+	
+	(function() {
+		var text = 'How many tickles does it take to make an octopus ' +
+				   'laugh? Ten tickles.';
+		return {
+			title: 'Reverse',
+			problem: 'Reverse the following string:',
+			text: text,
+			hint: 'One strategy: loop over the characters in reverse' +
+				  ' order, and build a new string.',
+			solve: function(answer) {
+				reversed = '';
+				for (var i = text.length - 1; i >= 0; i--) {
+					reversed += text.charAt(i);
+				}
+				return answer == reversed
+			}
+		}
+	}()),
 ]
