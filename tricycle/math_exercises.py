@@ -22,7 +22,7 @@ class PiDigit(Exercise):
 	
 	title = 'Digit of Pi'
 	
-	problem = 'What is the 6th decimal digit of Pi?'
+	problem = 'What is the 6th decimal place of Pi?'
 	
 	hint = "Try Google, JavaScript's `Math.PI`, or Python's `math.pi`."
 	
