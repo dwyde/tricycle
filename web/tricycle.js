@@ -8,9 +8,6 @@ tricycleApp.controller('ExerciseMenuCtrl', function ($scope, $http) {
 	
 	$scope.showExercise = function(exercise) {
 		$scope.current = exercise;
-	};
-	
-	$scope.solve = function() {
-		console.log($scope.answer === $scope.current.solution);
+		$scope.answer = '';
 	};
 });

@@ -18,12 +18,20 @@
 		</div>
 		<div id="exercise-display">
 			<h1>{{current.title}}</h1>
-			<p id="problem">{{current.problem}}</p>
-			<p id="hint">{{current.hint}}</p>
+			<p>{{current.problem}}</p>
+			<p>{{current.hint}}</p>
 			<form>
 				<input ng-model="answer">
-				<input id="solve" type="submit" value="Solve!" ng-click="solve()">
 			</form>
+			<div ng-switch on="answer === current.solution">
+				<div class="answer-correct" ng-switch-when="true">
+					Correct!
+				</div>
+				<div class="answer-incorrect" ng-switch-when="false">
+					Keep trying.
+				</div>
+				<div ng-switch-default></div>
+			</div>
 		</div>
 	</body>
 </html>
