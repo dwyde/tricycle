@@ -23,6 +23,7 @@
 			<h1>{{current.title}}</h1>
 			<div class="wrap">
 				<p>{{current.problem}}</p>
+				<p ng-show="current.text">{{current.text}}</p>
 				<form>
 					<input type="text" ng-model="answer">
 				</form>
