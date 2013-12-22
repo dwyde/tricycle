@@ -85,6 +85,31 @@ var exercises = [
 	
 	(function() {
 		var numbers = [
+			23, 20, 28, 1, 16, 24, 18, 52, 75, 89, 4, 67, 66, 70, 81,
+			71, 98, 61, 8, 30, 51, 53, 17, 38, 83, 94, 59, 87, 62, 10,
+			79, 37, 33, 55, 88, 77, 13, 41, 35, 36, 60, 97, 46, 63, 47,
+			32, 96, 34, 45, 5, 90, 29, 84, 49, 9, 25, 3, 43, 68, 80, 39,
+			57, 76, 69, 64, 56, 82, 42, 92, 58, 78, 50, 26, 22, 74, 48,
+			85, 21, 12, 95, 14, 15, 31, 40, 7, 93, 27, 99, 19, 54, 11,
+			44, 0, 86, 91, 2, 72, 6, 65
+		];
+		
+		return {
+			title: 'Missing',
+			problem: 'Which integer between 0 and 99 (inclusive) is ' +
+					 'not in the following list?',
+			text: numbers.join(', '),
+			hint: 'The integers from 0 to 99 add up to 4950.',
+			solve: function(answer) {
+				var integer = parseInt(answer);
+				return !answer.match(/\D/) && integer >= 0 &&
+					   integer <= 99 && numbers.indexOf(integer) === -1
+			}
+		}
+	}()),
+	
+	(function() {
+		var numbers = [
 			548, 587, 902, 565, 768, 360, 915, 602, 457, 160, 599, 501,
 			772, 511, 879, 207, 549, 305, 446, 850, 467, 333, 581, 110,
 			377, 238, 569, 858, 620, 181, 933, 420, 586, 859, 673, 869,
@@ -133,7 +158,8 @@ var exercises = [
 			title: 'Duplicate',
 			problem: 'Which number appears twice in the following list?',
 			text: numbers.join(', '),
-			hint: '',
+			hint: 'One approach: store the values in a dictionary, ' +
+				  'and check whether each value is already in there.',
 			solve: function(answer) {
 				var count = 0;
 				for (var i = 0; i < numbers.length; i++) {
