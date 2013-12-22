@@ -8,7 +8,7 @@ class Exercise(object):
 	
 	- title: a unique, human-readable label for this exercise
 	- problem: a question or challenge for the user to solve
-	- hint: a list of hints
+	- hint: a hint
 	- solve(): a method that returns a solution or list of solutions
 	"""
 	
