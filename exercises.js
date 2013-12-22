@@ -52,7 +52,7 @@ var exercises = [
 		var number = 1423249;
 		return {
 			title: 'Factor',
-			problem: 'Name one factor of ' + number + ' beside itself and 1.',
+			problem: 'Name a factor of ' + number + ' beside itself and 1.',
 			hint: 'There is only one answer.',
 			solve: function(answer) {
 				var integer = parseInt(answer);
