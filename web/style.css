@@ -2,6 +2,7 @@ body {
 	margin:0;
 	padding:0;
 	background: url("bg.jpg");
+	font-family:arial, sans-serif;
 }
 
 header h1 {
@@ -10,12 +11,12 @@ header h1 {
 	background: #4483AF;
 	color:#fff;
 	padding: 0.5em;
-	border-bottom:1px solid #888;
+	border-bottom:1px solid #000;
 }
 
 #exercise-menu, #exercise-display {
 	float:left;
-	border:1px solid #888;
+	border:1px solid #000;
 	background:#fff;
 }
 
@@ -51,13 +52,19 @@ header h1 {
 
 #exercise-display {
 	width:60%;
-	padding: .2em 1em 1em;
 }
 
 #exercise-display h1 {
-	font-size: 1em;
+	font-size: 1.3em;
+	background: #aaa;
+	color:#fff;
 	margin:0;
-	padding:0;
+	padding:.3em;
+	border-bottom: 1px solid #000;
+}
+
+#exercise-display .wrap {
+	padding: .2em 1em 1em;
 }
 
 #exercise-display a {
@@ -68,7 +75,7 @@ header h1 {
 	border:1px solid #888;
 }
 
-.answer-correct {
+#exercise-display .answer-correct {
 	font-weight:bold;
 	color:green;
 }

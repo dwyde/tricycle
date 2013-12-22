@@ -20,23 +20,25 @@
 		</div>
 		<div id="exercise-display">
 			<h1>{{current.title}}</h1>
-			<p>{{current.problem}}</p>
-			<form>
-				<input type="text" ng-model="answer">
-			</form>
-			<div ng-switch on="answer === current.solution">
-				<p class="answer-correct" ng-switch-when="true">
-					Correct!
-				</p>
-				<p class="answer-incorrect" ng-switch-when="false">
-					Keep trying.
-				</p>
-			</div>
-			<a ng-click="showHint = !showHint" href="#" id="show-hint">
-				Show hint
-			</a>
-			<div ng-switch on="showHint">
-				<div ng-switch-when="true">{{current.hint}}</div>
+			<div class="wrap">
+				<p>{{current.problem}}</p>
+				<form>
+					<input type="text" ng-model="answer">
+				</form>
+				<div ng-switch on="answer === current.solution">
+					<p class="answer-correct" ng-switch-when="true">
+						Correct!
+					</p>
+					<p class="answer-incorrect" ng-switch-when="false">
+						Keep trying.
+					</p>
+				</div>
+				<a ng-click="showHint = !showHint" href="#">
+					Show hint
+				</a>
+				<div ng-switch on="showHint">
+					<div ng-switch-when="true">{{current.hint}}</div>
+				</div>
 			</div>
 		</div>
 	</body>
