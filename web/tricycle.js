@@ -6,8 +6,11 @@ tricycleApp.controller('ExerciseMenuCtrl', function ($scope, $http) {
 		$scope.current = data[0];
 	});
 	
+	$scope.showHint = false;
+	
 	$scope.showExercise = function(exercise) {
 		$scope.current = exercise;
 		$scope.answer = '';
+		$scope.showHint = false;
 	};
 });

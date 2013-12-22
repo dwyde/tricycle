@@ -22,18 +22,22 @@
 		<div id="exercise-display">
 			<h1>{{current.title}}</h1>
 			<p>{{current.problem}}</p>
-			<p>{{current.hint}}</p>
 			<form>
 				<input ng-model="answer">
 			</form>
 			<div ng-switch on="answer === current.solution">
-				<div class="answer-correct" ng-switch-when="true">
+				<p class="answer-correct" ng-switch-when="true">
 					Correct!
-				</div>
-				<div class="answer-incorrect" ng-switch-when="false">
+				</p>
+				<p class="answer-incorrect" ng-switch-when="false">
 					Keep trying.
-				</div>
-				<div ng-switch-default></div>
+				</p>
+			</div>
+			<a ng-click="showHint = !showHint" href="#" id="show-hint">
+				Show hint
+			</a>
+			<div ng-switch on="showHint">
+				<div ng-switch-when="true">{{current.hint}}</div>
 			</div>
 		</div>
 	</body>
