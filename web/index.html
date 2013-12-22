@@ -10,7 +10,6 @@
 			<h1>Tricycle</h1>
 		</header>
 		<div id="exercise-menu">
-			<h1>Exercises</h1>
 			<ul>
 				<li ng-repeat="exercise in exercises">
 					<a href="#" ng-click="showExercise(exercise)">
@@ -23,7 +22,7 @@
 			<h1>{{current.title}}</h1>
 			<p>{{current.problem}}</p>
 			<form>
-				<input ng-model="answer">
+				<input type="text" ng-model="answer">
 			</form>
 			<div ng-switch on="answer === current.solution">
 				<p class="answer-correct" ng-switch-when="true">
