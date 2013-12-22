@@ -60,5 +60,52 @@ var exercises = [
 					   (number % integer === 0)
 			}
 		}
-	}())
+	}()),
+	
+	(function() {
+		var lower = 1,
+			upper = 20;
+		return {
+			title: 'Evens Product',
+			problem: 'Compute the product of all even integers from ' +
+					 lower + ' to ' + upper + ', inclusive.',
+			hint: 'For even numbers, n % 2 == 0.',
+			solve: function(answer) {
+				var product = 1;
+				for (var i = lower; i <= upper; i++) {
+					if (i % 2 == 0) {
+						product *= i;
+					}
+				}
+				return !answer.match(/\D/) && 
+					   parseInt(answer) === product
+			}
+		}
+	}()),
+	
+	(function() {
+		var numbers = [548, 587, 902, 565, 768, 360, 915, 602, 457, 160,
+		599, 501, 772, 511, 879, 207, 549, 305, 446, 850, 467, 333, 581,
+		110, 377, 238, 569, 858, 620, 181, 933, 420, 586, 859, 673, 869,
+		502, 349, 435, 832, 368, 274, 663, 861, 402, 556, 956, 784,
+		679, 363];
+		return {
+			title: 'Largest',
+			problem: 'What is the largest number in the following ' +
+					 'list: [' + numbers.join(', ') + ']?',
+			hint: 'Loop through, and keep track of the leader.',
+			solve: function(answer) {
+				var current,
+					max = Number.MIN_VALUE;
+				
+				for (var i = 0; i < numbers.length; i++) {
+					current = numbers[i];
+					if (current > max) {
+						max = current;
+					}
+				}
+				return answer == max;
+			}
+		}
+	}()),
 ]
