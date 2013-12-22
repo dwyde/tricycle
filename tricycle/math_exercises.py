@@ -11,7 +11,7 @@ class SimpleMultiplication(Exercise):
 	
 	problem = 'What is {}?'.format(' x '.join(map(str, numbers)))
 	
-	hints = ['Use a calculator, or your favorite programming language.']
+	hint = 'Use a calculator, or your favorite programming language.'
 	
 	def solve(self):
 		""" Multiply numbers together. """
@@ -24,10 +24,7 @@ class PiDigit(Exercise):
 	
 	problem = 'What is the 6th decimal digit of Pi?'
 	
-	hints = [
-		'Try Google, JavaScript\'s `Math.PI`, or Python\'s `math.pi`.',
-		'If all else fails, try every possible answer :-)'
-	]
+	hint = "Try Google, JavaScript's `Math.PI`, or Python's `math.pi`."
 	
 	def solve(self):
 		""" Index a string representation of Pi (3, dot, digits). """

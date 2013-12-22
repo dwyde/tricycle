@@ -6,9 +6,9 @@ class Exercise(object):
 	
 	Required attributes:
 	
-	- title: a human-readable label for this exercise
+	- title: a unique, human-readable label for this exercise
 	- problem: a question or challenge for the user to solve
-	- hints: a list of hints
+	- hint: a list of hints
 	- solve(): a method that returns a solution or list of solutions
 	"""
 	
@@ -20,14 +20,11 @@ class Exercise(object):
 		
 	def to_json(self):
 		""" Serialize an exercise to a JavaScript-friendly format. """
-		solutions = self.solve()
-		if not isinstance(solutions, list):
-			solutions = [solutions]
-		
+		solution = str(self.solve())
 		return {
-			'solutions': solutions,
+			'solution': solution,
 			'title': self.title,
 			'problem': self.problem,
-			'hints': self.hints,
+			'hints': self.hint,
 		}
 
