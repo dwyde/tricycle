@@ -1,10 +1,9 @@
 var tricycleApp = angular.module('tricycleApp', []);
  
-tricycleApp.controller('ExerciseMenuCtrl', function ($scope, $http) {
-	$http.get('exercises.json').success(function(data) {
-		$scope.exercises = data;
-		$scope.current = data[0];
-	});
+tricycleApp.controller('ExerciseMenuCtrl', function ($scope) {
+	
+	$scope.exercises = exercises;
+	$scope.current = exercises[0];
 	
 	$scope.showHint = false;
 	

@@ -3,6 +3,7 @@
 		<title>Tricycle: Programming Exercises</title>
 		<script src="angular.min.js"></script>
 		<script src="tricycle.js"></script>
+		<script src="exercises.js"></script>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body ng-controller="ExerciseMenuCtrl">
@@ -25,7 +26,7 @@
 				<form>
 					<input type="text" ng-model="answer">
 				</form>
-				<div ng-switch on="answer === current.solution">
+				<div ng-switch on="current.solve(answer)">
 					<p class="answer-correct" ng-switch-when="true">
 						Correct!
 					</p>
