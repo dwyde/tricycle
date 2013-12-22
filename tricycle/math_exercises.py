@@ -5,7 +5,7 @@ from tricycle.base_exercise import Exercise
 
 class SimpleMultiplication(Exercise):
 	
-	title = 'Simple Multiplication'
+	title = 'Multiplication'
 	
 	numbers = [12, 13, 14]
 	
