@@ -1,8 +1,29 @@
-<html>
+<html ng-app="tricycleApp">
 	<head>
 		<title>Tricycle: Programming Exercises</title>
-	</head>
-	<body>
+		<script src="angular.min.js"></script>
 		<script src="tricycle.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body ng-controller="ExerciseMenuCtrl">
+		<div id="exercise-menu">
+			<h1>Exercises</h1>
+			<ul>
+				<li ng-repeat="exercise in exercises">
+					<a href="#" ng-click="showExercise(exercise)">
+						{{exercise.title}}
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="exercise-display">
+			<h1>{{current.title}}</h1>
+			<p id="problem">{{current.problem}}</p>
+			<p id="hint">{{current.hint}}</p>
+			<form>
+				<input ng-model="answer">
+				<input id="solve" type="submit" value="Solve!" ng-click="solve()">
+			</form>
+		</div>
 	</body>
 </html>
