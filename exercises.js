@@ -13,7 +13,7 @@ var exercises = [
 		hint: "Try Google, JavaScript's `Math.PI`, or Python's `math.pi`.",
 		solve: function(answer) {
 			// Decimal places start at index 2.
-			return answer == String(Math.PI)[7];
+			return answer == String(Math.PI)[7]
 		}
 	},
 	
@@ -28,8 +28,37 @@ var exercises = [
 				for (var i = 0; i < numbers.length; i++) {
 					product *= numbers[i];
 				}
-				return answer == product;
+				return answer == product
 			}
 		}
 	}()),
+	
+	(function() {
+		var dividend = 990,
+			divisor = 73;
+		return {
+			title: 'Remainder',
+			problem: 'What is the remainder when dividing ' + dividend +
+					 ' by ' + divisor + '?',
+			hint: 'Many programming languages compute remainders via ' +
+				  'the modulo (%) operator.',
+			solve: function(answer) {
+				return answer == (dividend % divisor)
+			}
+		}
+	}()),
+	
+	(function() {
+		var number = 1423249;
+		return {
+			title: 'Factor',
+			problem: 'Name one factor of ' + number + ' beside itself and 1.',
+			hint: 'There is only one answer.',
+			solve: function(answer) {
+				var integer = parseInt(answer);
+				return (!answer.match(/\D/)) && (integer !== 1) && 
+					   (number % integer === 0)
+			}
+		}
+	}())
 ]
