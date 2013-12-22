@@ -33,6 +33,3 @@ var exercises = [
 		}
 	}()),
 ]
-
-
-console.log(exercises);
