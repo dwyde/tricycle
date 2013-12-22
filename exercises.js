@@ -1,7 +1,7 @@
 /**
  * Notes:
  * 
- * - document required fields: title, problem, hint, solve().
+ * - document fields: title, problem, hint, solve(), text (optional)
  * - to solve, `answer` will be a string
  * - two ways to write: {} and (function(){})
  */
@@ -84,15 +84,23 @@ var exercises = [
 	}()),
 	
 	(function() {
-		var numbers = [548, 587, 902, 565, 768, 360, 915, 602, 457, 160,
-		599, 501, 772, 511, 879, 207, 549, 305, 446, 850, 467, 333, 581,
-		110, 377, 238, 569, 858, 620, 181, 933, 420, 586, 859, 673, 869,
-		502, 349, 435, 832, 368, 274, 663, 861, 402, 556, 956, 784,
-		679, 363];
+		var numbers = [
+			548, 587, 902, 565, 768, 360, 915, 602, 457, 160, 599, 501,
+			772, 511, 879, 207, 549, 305, 446, 850, 467, 333, 581, 110,
+			377, 238, 569, 858, 620, 181, 933, 420, 586, 859, 673, 869,
+			502, 349, 435, 832, 368, 274, 663, 861, 402, 556, 916, 784,
+			679, 363, 658, 662, 125, 426, 467, 388, 746, 167, 842, 564,
+			530, 504, 971, 745, 656, 878, 620, 500, 108, 272, 296, 512,
+			353, 983, 624, 744, 644, 848, 112, 882, 335, 854, 298, 450,
+			734, 549, 835, 215, 138, 527, 398, 855, 930, 120, 608, 944,
+			310, 422, 749, 844
+		];
+		
 		return {
 			title: 'Largest',
 			problem: 'What is the largest number in the following ' +
-					 'list: [' + numbers.join(', ') + ']?',
+					 'list?',
+			text: numbers.join(', '),
 			hint: 'Loop through, and keep track of the leader.',
 			solve: function(answer) {
 				var current,
