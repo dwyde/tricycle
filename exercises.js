@@ -98,8 +98,7 @@ var exercises = [
 		
 		return {
 			title: 'Largest',
-			problem: 'What is the largest number in the following ' +
-					 'list?',
+			problem: 'What is the largest number in the following list?',
 			text: numbers.join(', '),
 			hint: 'Loop through, and keep track of the leader.',
 			solve: function(answer) {
