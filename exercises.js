@@ -10,7 +10,7 @@ var exercises = [
 	{
 		title: 'Digit of Pi',
 		problem: 'What is the 6th decimal place of Pi?',
-		hint: "Try Google, JavaScript's `Math.PI`, or Python's `math.pi`.",
+		hint: "Try JavaScript's `Math.PI`, or Python's `math.pi`.",
 		solve: function(answer) {
 			// Decimal places start at index 2.
 			return answer == parseInt(String(Math.PI)[7])
@@ -173,12 +173,43 @@ var exercises = [
 	}()),
 	
 	(function() {
+		var text = 'Why did the orange roll back down the hill? ' +
+				   'Because she was out of juice.';
+		return {
+			title: 'Character Count',
+			problem: 'How many characters are in the following string?',
+			text: text,
+			hint: "Use Python's `len(text)`, JavaScript's `text.length`" +
+				  ", or the Unix shell's `wc`.",
+			solve: function(answer) {
+				return answer == text.length
+			}
+		}
+	}()),
+	
+	(function() {
+		var text = 'Why was the skeleton afraid to cross the road? ' +
+				   'Because he had no guts.';
+		return {
+			title: 'Word Count',
+			problem: 'How many words are in the following string?',
+			text: text,
+			hint: 'Split the string on spaces, and count the length ' +
+				  'of the resulting list.',
+			solve: function(answer) {
+				var words = text.split(' ');
+				return answer == words.length
+			}
+		}
+	}()),
+	
+	(function() {
 		var character = 'e',
 			text = 'And on that day, he learned why not to wear ' +
 				   'socks with sandals. It was a difficult lesson, ' +
 				   'but an extremely important one.';
 		return {
-			title: 'Character Count',
+			title: 'Occurrences',
 			problem: 'How many times does the character "' + character +
 					 '" appear in the following string?',
 			text: text,
