@@ -39,6 +39,10 @@ header h1 {
 	border-bottom:none;
 }
 
+#exercise-menu li.correct a {
+	color: green;
+}
+
 #exercise-menu a {
 	text-decoration:none;
 	color: #000;

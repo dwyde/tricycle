@@ -12,7 +12,8 @@
 		</header>
 		<div id="exercise-menu">
 			<ul>
-				<li ng-repeat="exercise in exercises">
+				<li ng-repeat="exercise in exercises"
+				 ng-class="{correct: exercise.correct}">
 					<a href="#" ng-click="showExercise(exercise)">
 						{{exercise.title}}
 					</a>
@@ -29,7 +30,7 @@
 				<form>
 					<input type="text" ng-model="answer">
 				</form>
-				<div ng-switch on="current.solve(answer)">
+				<div ng-switch on="solve(answer)">
 					<p class="answer-correct" ng-switch-when="true">
 						Correct!
 					</p>

@@ -11,6 +11,14 @@ tricycleApp.controller('ExerciseMenuCtrl', function ($scope) {
 		resetExercise();
 	};
 	
+	$scope.solve = function(answer) {
+		var result = $scope.current.solve(answer);
+		if (result) {
+			$scope.current.correct = true;
+		}
+		return result;
+	};
+	
 	function resetExercise() {
 		$scope.answer = '';
 		$scope.showHint = false;
