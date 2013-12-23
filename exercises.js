@@ -7,16 +7,6 @@
  */
 
 var exercises = [
-	{
-		title: 'Digit of Pi',
-		problem: 'What is the 6th decimal place of Pi?',
-		hint: "Try JavaScript's `Math.PI`, or Python's `math.pi`.",
-		solve: function(answer) {
-			// Decimal places start at index 2.
-			return answer == parseInt(String(Math.PI)[7])
-		}
-	},
-	
 	(function() {
 		var numbers = [12, 13, 14];
 		return {
@@ -62,6 +52,16 @@ var exercises = [
 		}
 	}()),
 	
+	{
+		title: 'Digit of Pi',
+		problem: 'What is the 6th decimal place of Pi?',
+		hint: "Try JavaScript's `Math.PI`, or Python's `math.pi`.",
+		solve: function(answer) {
+			// Decimal places start at index 2.
+			return answer == parseInt(String(Math.PI)[7])
+		}
+	},
+	
 	(function() {
 		var lower = 1,
 			upper = 20;
@@ -79,6 +79,79 @@ var exercises = [
 				}
 				return !answer.match(/\D/) && 
 					   parseInt(answer) === product
+			}
+		}
+	}()),
+	
+	(function() {
+		var text = 'Why did the orange roll back down the hill? ' +
+				   'Because she was out of juice.';
+		return {
+			title: 'Character Count',
+			problem: 'How many characters are in the following string?',
+			text: text,
+			hint: "Use Python's `len(text)`, JavaScript's `text.length`" +
+				  ", or the Unix shell's `wc`.",
+			solve: function(answer) {
+				return answer == text.length
+			}
+		}
+	}()),
+	
+	(function() {
+		var text = 'Why was the skeleton afraid to cross the road? ' +
+				   'Because he had no guts.';
+		return {
+			title: 'Word Count',
+			problem: 'How many words are in the following string?',
+			text: text,
+			hint: 'Split the string on spaces, and count the length ' +
+				  'of the resulting list.',
+			solve: function(answer) {
+				var words = text.split(' ');
+				return answer == words.length
+			}
+		}
+	}()),
+	
+	(function() {
+		var character = 'e',
+			text = 'And on that day, he learned why not to wear ' +
+				   'socks with sandals. It was a difficult lesson, ' +
+				   'but an extremely important one.';
+		return {
+			title: 'Occurrences',
+			problem: 'How many times does the character "' + character +
+					 '" appear in the following string?',
+			text: text,
+			hint: 'Loop over the characters, and keep a running count.',
+			solve: function(answer) {
+				var count = 0;
+				for (var i = 0; i < text.length; i++) {
+					if (text.charAt(i) == character) {
+						count += 1;
+					}
+				}
+				return answer == count
+			}
+		}
+	}()),
+	
+	(function() {
+		var text = 'How many tickles does it take to make an octopus ' +
+				   'laugh? Ten tickles.';
+		return {
+			title: 'Reverse',
+			problem: 'Reverse the following string:',
+			text: text,
+			hint: 'One strategy: loop over the characters in reverse' +
+				  ' order, and build a new string.',
+			solve: function(answer) {
+				reversed = '';
+				for (var i = text.length - 1; i >= 0; i--) {
+					reversed += text.charAt(i);
+				}
+				return answer == reversed
 			}
 		}
 	}()),
@@ -168,79 +241,6 @@ var exercises = [
 					}
 				}
 				return count == 2
-			}
-		}
-	}()),
-	
-	(function() {
-		var text = 'Why did the orange roll back down the hill? ' +
-				   'Because she was out of juice.';
-		return {
-			title: 'Character Count',
-			problem: 'How many characters are in the following string?',
-			text: text,
-			hint: "Use Python's `len(text)`, JavaScript's `text.length`" +
-				  ", or the Unix shell's `wc`.",
-			solve: function(answer) {
-				return answer == text.length
-			}
-		}
-	}()),
-	
-	(function() {
-		var text = 'Why was the skeleton afraid to cross the road? ' +
-				   'Because he had no guts.';
-		return {
-			title: 'Word Count',
-			problem: 'How many words are in the following string?',
-			text: text,
-			hint: 'Split the string on spaces, and count the length ' +
-				  'of the resulting list.',
-			solve: function(answer) {
-				var words = text.split(' ');
-				return answer == words.length
-			}
-		}
-	}()),
-	
-	(function() {
-		var character = 'e',
-			text = 'And on that day, he learned why not to wear ' +
-				   'socks with sandals. It was a difficult lesson, ' +
-				   'but an extremely important one.';
-		return {
-			title: 'Occurrences',
-			problem: 'How many times does the character "' + character +
-					 '" appear in the following string?',
-			text: text,
-			hint: 'Loop over the characters, and keep a running count.',
-			solve: function(answer) {
-				var count = 0;
-				for (var i = 0; i < text.length; i++) {
-					if (text.charAt(i) == character) {
-						count += 1;
-					}
-				}
-				return answer == count
-			}
-		}
-	}()),
-	
-	(function() {
-		var text = 'How many tickles does it take to make an octopus ' +
-				   'laugh? Ten tickles.';
-		return {
-			title: 'Reverse',
-			problem: 'Reverse the following string:',
-			text: text,
-			hint: 'One strategy: loop over the characters in reverse' +
-				  ' order, and build a new string.',
-			solve: function(answer) {
-				reversed = '';
-				for (var i = text.length - 1; i >= 0; i--) {
-					reversed += text.charAt(i);
-				}
-				return answer == reversed
 			}
 		}
 	}()),
