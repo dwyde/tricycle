@@ -136,7 +136,7 @@ var exercises = [
 						max = current;
 					}
 				}
-				return answer == max;
+				return answer == max
 			}
 		}
 	}()),
@@ -167,7 +167,30 @@ var exercises = [
 						count += 1;
 					}
 				}
-				return count == 2;
+				return count == 2
+			}
+		}
+	}()),
+	
+	(function() {
+		var character = 'e',
+			text = 'And on that day, he learned why not to wear ' +
+				   'socks with sandals. It was a difficult lesson, ' +
+				   'but an extremely important one.';
+		return {
+			title: 'Character Count',
+			problem: 'How many times does the character "' + character +
+					 '" appear in the following string?',
+			text: text,
+			hint: 'Loop over the characters, and keep a running count.',
+			solve: function(answer) {
+				var count = 0;
+				for (var i = 0; i < text.length; i++) {
+					if (text.charAt(i) == character) {
+						count += 1;
+					}
+				}
+				return answer == count
 			}
 		}
 	}()),
