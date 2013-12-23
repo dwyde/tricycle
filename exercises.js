@@ -13,7 +13,7 @@ var exercises = [
 		hint: "Try Google, JavaScript's `Math.PI`, or Python's `math.pi`.",
 		solve: function(answer) {
 			// Decimal places start at index 2.
-			return answer == String(Math.PI)[7]
+			return answer == parseInt(String(Math.PI)[7])
 		}
 	},
 	
