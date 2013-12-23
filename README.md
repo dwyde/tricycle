@@ -26,3 +26,9 @@ list operations, and objects/dictionaries are also important.
 [AngularJS](http://angularjs.org/) makes single-page web apps easy.
 
 State is stored using [local storage](http://en.wikipedia.org/wiki/Web_storage).
+
+## What's next?
+
+- documentation
+- unit tests
+- more exercises
