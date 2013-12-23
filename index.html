@@ -12,9 +12,9 @@
 		</header>
 		<div id="exercise-menu">
 			<ul>
-				<li ng-repeat="exercise in exercises"
-				 ng-class="{correct: exercise.correct}">
-					<a href="#" ng-click="showExercise(exercise)">
+				<li ng-repeat="exercise in exercises">
+					<a href="#" ng-click="showExercise(exercise)"
+					 ng-class="{correct: exercise.correct}">
 						{{exercise.title}}
 					</a>
 				</li>
