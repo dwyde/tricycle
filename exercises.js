@@ -6,7 +6,7 @@
  * - two ways to write: {} and (function(){})
  */
 
-var exercises = [
+var EXERCISES = [
 	(function() {
 		var numbers = [12, 13, 14];
 		return {
