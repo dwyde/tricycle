@@ -3,7 +3,7 @@ var tricycleApp = angular.module('tricycleApp', []);
 tricycleApp.controller('ExerciseMenuCtrl', function ($scope) {
 	
 	$scope.exercises = exercises;
-	$scope.current = exercises[exercises.length - 1];
+	$scope.current = exercises[0];
 	resetExercise();
 	
 	$scope.showExercise = function(exercise) {
