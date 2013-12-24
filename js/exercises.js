@@ -154,6 +154,7 @@ var EXERCISES = [
 			44, 0, 86, 91, 2, 72, 6, 65
 		];
         this.text = this.numbers.join(', ');
+        // Dynamically compute a hint from the lower and upper bounds.
         var that = this;
         this.hint = 'The integers from ' + this.lower + ' to ' + 
                     this.upper + ' add up to ' + (function() {
