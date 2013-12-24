@@ -25,7 +25,7 @@
 		},
 		'Factor': function(exercise) {
 			exercise.number = 10;
-			check(exercise, ['2', '5'], ['1', '10']);
+			check(exercise, ['2', '5'], ['1', '10', '20']);
 		},
 		'Digit of Pi': function(exercise) {
 			check(exercise, ['2'], ['9', '6']);
