@@ -53,7 +53,10 @@
 			check(exercise, ['?321 cBa'], ['?321 aBc']);
 		},
 		'Missing': function(exercise) {
-			check(exercise, ['73'], ['0', '99', '100']);
+			exercise.lower = 5;
+			exercise.upper = 10;
+			exercise.numbers = [5, 6, 7, 9, 10];
+			check(exercise, ['8'], ['4', '5', '10', '11']);
 		},
 		'Largest': function(exercise) {
 			exercise.numbers = [5, 4, 3, 6, 2];

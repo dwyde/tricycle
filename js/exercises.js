@@ -139,8 +139,11 @@ var EXERCISES = [
     
     new function() {
         this.title = 'Missing';
-        this.problem = 'Which integer between 0 and 99 (inclusive) ' +
-                      'is not in the following list?';
+        this.lower = 0;
+        this.upper = 99;
+        this.problem = 'Which integer between ' + this.lower + ' and ' +
+                       this.upper + ' (inclusive) is not in the ' + 
+                       'following list?';
         this.numbers = [
 			23, 20, 28, 1, 16, 24, 18, 52, 75, 89, 4, 67, 66, 70, 81,
 			71, 98, 61, 8, 30, 51, 53, 17, 38, 83, 94, 59, 87, 62, 10,
@@ -154,8 +157,10 @@ var EXERCISES = [
         this.hint = 'The integers from 0 to 99 add up to 4950.';
         this.solve = function(answer) {
             var integer = parseInt(answer);
-            return !answer.match(/\D/) && integer >= 0 &&
-                   integer <= 99 && this.numbers.indexOf(integer) === -1
+            return !answer.match(/\D/) &&
+                   integer >= this.lower &&
+                   integer <= this.upper &&
+                   this.numbers.indexOf(integer) === -1
         }
     },
     new function() {
