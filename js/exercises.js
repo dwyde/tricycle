@@ -44,69 +44,50 @@ var EXERCISES = [
 				   integer !== 1 && (this.number % integer === 0)
 		}
 	},
-];
-
-var _EXERCISES = [
 	
-	(function() {
-		var number = 1423249;
-		return {
-			title: 'Factor',
-			problem: 'Name a factor of ' + number + ' beside itself and 1.',
-			hint: 'There is only one answer.',
-			solve: function(answer) {
-				var integer = parseInt(answer);
-				return (!answer.match(/\D/)) && (integer !== 1) && 
-					   (number % integer === 0)
-			}
-		}
-	}()),
-	
-	{
-		title: 'Digit of Pi',
-		problem: 'What is the 6th decimal place of Pi?',
-		hint: "Try JavaScript's `Math.PI`, or Python's `math.pi`.",
-		solve: function(answer) {
+	new function() {
+		this.title = 'Digit of Pi';
+		this.problem = 'What is the 6th decimal place of Pi?';
+		this.hint = "Try JavaScript's `Math.PI` or Python's `math.pi`.";
+		this.solve = function(answer) {
 			// Decimal places start at index 2.
 			return answer == parseInt(String(Math.PI)[7])
 		}
 	},
 	
-	(function() {
-		var lower = 1,
-			upper = 20;
-		return {
-			title: 'Evens Product',
-			problem: 'Compute the product of all even integers from ' +
-					 lower + ' to ' + upper + ', inclusive.',
-			hint: 'For even numbers, n % 2 == 0.',
-			solve: function(answer) {
-				var product = 1;
-				for (var i = lower; i <= upper; i++) {
-					if (i % 2 == 0) {
-						product *= i;
-					}
+	new function() {
+		this.title = 'Evens Product';
+		this.lower = 1;
+		this.upper = 20;
+		this.problem = 'Find the product of all even integers from ' +
+				 this.lower + ' to ' + this.upper + ', inclusive.',
+		this.hint = 'For even numbers, n % 2 == 0.',
+		this.solve = function(answer) {
+			var product = 1;
+			for (var i = this.lower; i <= this.upper; i++) {
+				if (i % 2 == 0) {
+					product *= i;
 				}
-				return !answer.match(/\D/) && 
-					   parseInt(answer) === product
 			}
+			return !answer.match(/\D/) &&  parseInt(answer) === product
 		}
-	}()),
+	},
 	
-	(function() {
-		var text = 'Why did the orange roll back down the hill? ' +
-				   'Because she was out of juice.';
-		return {
-			title: 'Character Count',
-			problem: 'How many characters are in the following string?',
-			text: text,
-			hint: "Use Python's `len(text)`, JavaScript's `text.length`" +
-				  ", or the Unix shell's `wc`.",
-			solve: function(answer) {
-				return answer == text.length
-			}
+	new function() {
+		this.title = 'Character Count';
+		this.problem = 'How many characters are in the following ' +
+					   'string?';
+		this.text = 'Why did the orange roll back down the hill? ' +
+				    'Because she was out of juice.';
+		this.hint = "Use Python's `len(text)`, JavaScript's " +
+				    "`text.length`, or the Unix shell's `wc`.",
+		this.solve = function(answer) {
+			return answer == this.text.length
 		}
-	}()),
+	},
+];
+
+var _EXERCISES = [
 	
 	(function() {
 		var text = 'Why was the skeleton afraid to cross the road? ' +
