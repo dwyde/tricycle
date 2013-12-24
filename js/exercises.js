@@ -135,13 +135,13 @@ var EXERCISES = [
             }
             return answer == reversed
         }
-    }
-];
-
-var _EXERCISES = [
-	
-	(function() {
-		var numbers = [
+    },
+    
+    new function() {
+        this.title = 'Missing';
+        this.problem = 'Which integer between 0 and 99 (inclusive) ' +
+                      'is not in the following list?';
+        this.numbers = [
 			23, 20, 28, 1, 16, 24, 18, 52, 75, 89, 4, 67, 66, 70, 81,
 			71, 98, 61, 8, 30, 51, 53, 17, 38, 83, 94, 59, 87, 62, 10,
 			79, 37, 33, 55, 88, 77, 13, 41, 35, 36, 60, 97, 46, 63, 47,
@@ -150,23 +150,19 @@ var _EXERCISES = [
 			85, 21, 12, 95, 14, 15, 31, 40, 7, 93, 27, 99, 19, 54, 11,
 			44, 0, 86, 91, 2, 72, 6, 65
 		];
-		
-		return {
-			title: 'Missing',
-			problem: 'Which integer between 0 and 99 (inclusive) is ' +
-					 'not in the following list?',
-			text: numbers.join(', '),
-			hint: 'The integers from 0 to 99 add up to 4950.',
-			solve: function(answer) {
-				var integer = parseInt(answer);
-				return !answer.match(/\D/) && integer >= 0 &&
-					   integer <= 99 && numbers.indexOf(integer) === -1
-			}
-		}
-	}()),
-	
-	(function() {
-		var numbers = [
+        this.text = this.numbers.join(', ');
+        this.hint = 'The integers from 0 to 99 add up to 4950.';
+        this.solve = function(answer) {
+            var integer = parseInt(answer);
+            return !answer.match(/\D/) && integer >= 0 &&
+                   integer <= 99 && this.numbers.indexOf(integer) === -1
+        }
+    },
+    new function() {
+        this.title = 'Largest';
+        this.problem = 'What is the largest number in the following ' +
+                       'list?';
+        this.numbers = [
 			548, 587, 902, 565, 768, 360, 915, 602, 457, 160, 599, 501,
 			772, 511, 879, 207, 549, 305, 446, 850, 467, 333, 581, 110,
 			377, 238, 569, 858, 620, 181, 933, 420, 586, 859, 673, 869,
@@ -177,29 +173,27 @@ var _EXERCISES = [
 			734, 549, 835, 215, 138, 527, 398, 855, 930, 120, 608, 944,
 			310, 422, 749, 844
 		];
-		
-		return {
-			title: 'Largest',
-			problem: 'What is the largest number in the following list?',
-			text: numbers.join(', '),
-			hint: 'Loop through, and keep track of the leader.',
-			solve: function(answer) {
-				var current,
-					max = Number.MIN_VALUE;
-				
-				for (var i = 0; i < numbers.length; i++) {
-					current = numbers[i];
-					if (current > max) {
-						max = current;
-					}
-				}
-				return answer == max
-			}
-		}
-	}()),
-	
-	(function() {
-		var numbers = [
+        this.text = this.numbers.join(', '),
+        this.hint = 'Loop through, and keep track of the leader.';
+        this.solve = function(answer) {
+            var current,
+                max = Number.MIN_VALUE;
+            
+            for (var i = 0; i < this.numbers.length; i++) {
+                current = this.numbers[i];
+                if (current > max) {
+                    max = current;
+                }
+            }
+            return answer == max
+        }
+    },
+    
+    new function() {
+        this.title = 'Duplicate',
+        this.problem = 'Which number appears twice in the following ' +
+                       'list?';
+        this.numbers = [
 			512, 516, 521, 543, 566, 567, 428, 586, 695, 605, 629, 118,
 			636, 644, 134, 136, 139, 653, 144, 149, 666, 162, 183, 196,
 			201, 716, 719, 723, 727, 223, 227, 228, 343, 252, 766, 981,
@@ -210,22 +204,17 @@ var _EXERCISES = [
 			452, 456, 458, 463, 464, 465, 467, 469, 483, 997, 487, 499,
 			255, 509, 511, 889
 		];
-		
-		return {
-			title: 'Duplicate',
-			problem: 'Which number appears twice in the following list?',
-			text: numbers.join(', '),
-			hint: 'One approach: store the values in a dictionary, ' +
-				  'and check whether each value is already in there.',
-			solve: function(answer) {
-				var count = 0;
-				for (var i = 0; i < numbers.length; i++) {
-					if (numbers[i] == answer) {
-						count += 1;
-					}
-				}
-				return count == 2
-			}
-		}
-	}()),
-]
+		this.text = this.numbers.join(', ');
+        this.hint = 'One approach: store the values in a dictionary, ' +
+				    'and check whether each value is already in there.';
+        this.solve = function(answer) {
+            var count = 0;
+            for (var i = 0; i < this.numbers.length; i++) {
+                if (this.numbers[i] == answer) {
+                    count += 1;
+                }
+            }
+            return count == 2
+        }
+    },
+];

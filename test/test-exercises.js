@@ -2,7 +2,6 @@
 
 	/** Helper method to check an exercise's solution. */
 	function check(exercise, correct, incorrect) {
-		incorrect = (incorrect || []);
 		test(exercise.title, function() {
 			var i;
 			for (i = 0; i < correct.length; i++) {
@@ -51,7 +50,18 @@
 		},
 		'Reverse': function(exercise) {
 			exercise.text = 'aBc 123?';
-			check(exercise, ['?321 cBa'], ['?321 abc']);
+			check(exercise, ['?321 cBa'], ['?321 aBc']);
+		},
+		'Missing': function(exercise) {
+			check(exercise, ['73'], ['0', '99', '100']);
+		},
+		'Largest': function(exercise) {
+			exercise.numbers = [5, 4, 3, 6, 2];
+			check(exercise, ['6'], ['5', '2', '8']);
+		},
+		'Duplicate': function(exercise) {
+			exercise.numbers = [1, 2, 3, 2, 4];
+			check(exercise, ['2'], ['1', '3', '4']);
 		},
 	};
 
