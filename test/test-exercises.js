@@ -40,6 +40,19 @@
 			exercise.text = '1234567890';
 			check(exercise, ['10'], ['9', '11']);
 		},
+		'Word Count': function(exercise) {
+			exercise.text = 'One two three.';
+			check(exercise, ['3'], ['2', '4']);
+		},
+		'Occurrences': function(exercise) {
+			exercise.character = 'c';
+			exercise.text = 'Backpack!';
+			check(exercise, ['2'], ['1', '3']);
+		},
+		'Reverse': function(exercise) {
+			exercise.text = 'aBc 123?';
+			check(exercise, ['?321 cBa'], ['?321 abc']);
+		},
 	};
 
 	/** Loop over all exercises, and execute a test for each. */

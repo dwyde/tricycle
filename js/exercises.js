@@ -85,67 +85,60 @@ var EXERCISES = [
 			return answer == this.text.length
 		}
 	},
+	
+	new function() {
+		this.title = 'Word Count';
+        this.problem = 'How many words are in the following string?',
+        this.text = 'Why was the skeleton afraid to cross the road? ' +
+				    'Because he had no guts.';
+		this.hint = 'Split the string on spaces, and count the ' +
+			  'length of the resulting list.';
+		this.solve = function(answer) {
+			var words = this.text.split(' ');
+			return answer == words.length
+		}
+	},
+    
+    new function() {
+        this.title = 'Occurrences';
+        this.character = 'e';
+        this.problem = 'How many times does the character "' +
+                       this.character + '" appear in the following ' +
+                       'string?';
+        this.text = 'And on that day, he learned why not to wear ' +
+                    'socks with sandals. It was a difficult lesson, ' +
+                    'but an extremely important one.';
+        this.hint = 'Loop over the characters, and keep a running ' +
+                    'count.';
+        this.solve = function(answer) {
+            var count = 0;
+            for (var i = 0; i < this.text.length; i++) {
+                if (this.text.charAt(i) == this.character) {
+                    count += 1;
+                }
+            }
+            return answer == count
+        }
+    },
+    
+    new function() {
+        this.title = 'Reverse';
+        this.problem = 'Reverse the following string:',
+        this.text = 'How many tickles does it take to make an ' +
+				    'octopus laugh? Ten tickles.';
+        this.hint = 'One strategy: loop over the characters in ' +
+              'reverse order, and build a new string.',
+        this.solve = function(answer) {
+            reversed = '';
+            for (var i = this.text.length - 1; i >= 0; i--) {
+                reversed += this.text.charAt(i);
+            }
+            return answer == reversed
+        }
+    }
 ];
 
 var _EXERCISES = [
-	
-	(function() {
-		var text = 'Why was the skeleton afraid to cross the road? ' +
-				   'Because he had no guts.';
-		return {
-			title: 'Word Count',
-			problem: 'How many words are in the following string?',
-			text: text,
-			hint: 'Split the string on spaces, and count the length ' +
-				  'of the resulting list.',
-			solve: function(answer) {
-				var words = text.split(' ');
-				return answer == words.length
-			}
-		}
-	}()),
-	
-	(function() {
-		var character = 'e',
-			text = 'And on that day, he learned why not to wear ' +
-				   'socks with sandals. It was a difficult lesson, ' +
-				   'but an extremely important one.';
-		return {
-			title: 'Occurrences',
-			problem: 'How many times does the character "' + character +
-					 '" appear in the following string?',
-			text: text,
-			hint: 'Loop over the characters, and keep a running count.',
-			solve: function(answer) {
-				var count = 0;
-				for (var i = 0; i < text.length; i++) {
-					if (text.charAt(i) == character) {
-						count += 1;
-					}
-				}
-				return answer == count
-			}
-		}
-	}()),
-	
-	(function() {
-		var text = 'How many tickles does it take to make an octopus ' +
-				   'laugh? Ten tickles.';
-		return {
-			title: 'Reverse',
-			problem: 'Reverse the following string:',
-			text: text,
-			hint: 'One strategy: loop over the characters in reverse' +
-				  ' order, and build a new string.',
-			solve: function(answer) {
-				reversed = '';
-				for (var i = text.length - 1; i >= 0; i--) {
-					reversed += text.charAt(i);
-				}
-				return answer == reversed
-			}
-		}
-	}()),
 	
 	(function() {
 		var numbers = [
