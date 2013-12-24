@@ -3,40 +3,50 @@
  * 
  * - document fields: title, problem, hint, solve(), text (optional)
  * - to solve, `answer` will be a string
- * - two ways to write: {} and (function(){})
  */
-
 var EXERCISES = [
-	(function() {
-		var numbers = [12, 13, 14];
-		return {
-			title: 'Multiplication',
-			problem: 'What is ' + numbers.join(' x ') + '?',
-			hint: 'Use a calculator, or your favorite programming language.',
-			solve: function(answer) {
-				var product = 1;
-				for (var i = 0; i < numbers.length; i++) {
-					product *= numbers[i];
-				}
-				return answer == product
+	new function() {
+		this.title = 'Multiplication';
+		this.numbers = [12, 13, 14];
+		this.problem = 'What is ' + this.numbers.join(' x ') + '?';
+		this.hint = 'Use your favorite programming language.';
+		this.solve = function(answer) {
+			var product = 1;
+			for (var i = 0; i < this.numbers.length; i++) {
+				product *= this.numbers[i];
 			}
-		}
-	}()),
+			return answer == product
+		};
+	},
 	
-	(function() {
-		var dividend = 990,
-			divisor = 73;
-		return {
-			title: 'Remainder',
-			problem: 'What is the remainder when dividing ' + dividend +
-					 ' by ' + divisor + '?',
-			hint: 'Many programming languages compute remainders via ' +
-				  'the modulo (%) operator.',
-			solve: function(answer) {
-				return answer == (dividend % divisor)
-			}
+	new function() {
+		this.title = 'Remainder';
+		this.dividend = 990;
+		this.divisor = 73;
+		this.problem = 'What is the remainder when dividing ' +
+						this.dividend + ' by ' + this.divisor + '?';
+		this.hint = 'Many languages compute remainders via the ' +
+					'modulo (%) operator.';
+		this.solve = function(answer) {
+			return answer == this.dividend % this.divisor
+		};
+	},
+	
+	new function() {
+		this.title = 'Factor';
+		this.number = 1423249;
+		this.problem = 'Name a factor of ' + this.number + ' beside ' +
+					   'itself and 1.';
+		this.hint = 'There is only one answer.',
+		this.solve = function(answer) {
+			var integer = parseInt(answer);
+			return !answer.match(/\D/) && integer !== this.number &&
+				   integer !== 1 && (this.number % integer === 0)
 		}
-	}()),
+	},
+];
+
+var _EXERCISES = [
 	
 	(function() {
 		var number = 1423249;
