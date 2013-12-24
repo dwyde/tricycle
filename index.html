@@ -1,51 +1,51 @@
 <html ng-app="tricycleApp">
-	<head>
-		<title>Tricycle: Programming Exercises</title>
-		<script src="js/angular.min.js"></script>
-		<script src="js/exercises.js"></script>
-		<script src="js/storage.js"></script>
-		<script src="js/tricycle.js"></script>
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body ng-controller="ExerciseMenuCtrl">
-		<header>
-			<h1>Tricycle</h1>
-		</header>
-		<div id="exercise-menu">
-			<ul>
-				<li ng-repeat="exercise in exercises">
-					<a href="#" ng-click="showExercise(exercise)"
-					 ng-class="{correct: exercise.correct}">
-						{{exercise.title}}
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div id="exercise-display">
-			<h1>{{current.title}}</h1>
-			<div class="wrap">
-				<p>{{current.problem}}</p>
-				<p ng-show="current.text" id="exercise-text">
-					{{current.text}}
-				</p>
-				<form>
-					<input type="text" ng-model="answer">
-				</form>
-				<div ng-switch on="solve(answer)">
-					<p class="answer-correct" ng-switch-when="true">
-						Correct!
-					</p>
-					<p class="answer-incorrect" ng-switch-when="false">
-						Keep trying.
-					</p>
-				</div>
-				<a ng-click="showHint = !showHint" href="#">
-					Show hint
-				</a>
-				<div ng-switch on="showHint">
-					<div ng-switch-when="true">{{current.hint}}</div>
-				</div>
-			</div>
-		</div>
-	</body>
+    <head>
+        <title>Tricycle: Programming Exercises</title>
+        <script src="js/angular.min.js"></script>
+        <script src="js/exercises.js"></script>
+        <script src="js/storage.js"></script>
+        <script src="js/tricycle.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body ng-controller="ExerciseMenuCtrl">
+        <header>
+            <h1>Tricycle</h1>
+        </header>
+        <div id="exercise-menu">
+            <ul>
+                <li ng-repeat="exercise in exercises">
+                    <a href="#" ng-click="showExercise(exercise)"
+                     ng-class="{correct: exercise.correct}">
+                        {{exercise.title}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="exercise-display">
+            <h1>{{current.title}}</h1>
+            <div class="wrap">
+                <p>{{current.problem}}</p>
+                <p ng-show="current.text" id="exercise-text">
+                    {{current.text}}
+                </p>
+                <form>
+                    <input type="text" ng-model="answer">
+                </form>
+                <div ng-switch on="solve(answer)">
+                    <p class="answer-correct" ng-switch-when="true">
+                        Correct!
+                    </p>
+                    <p class="answer-incorrect" ng-switch-when="false">
+                        Keep trying.
+                    </p>
+                </div>
+                <a ng-click="showHint = !showHint" href="#">
+                    Show hint
+                </a>
+                <div ng-switch on="showHint">
+                    <div ng-switch-when="true">{{current.hint}}</div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
