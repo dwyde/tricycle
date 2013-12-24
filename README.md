@@ -2,8 +2,8 @@
 
 ## What is this?
 
-This project is a web app for coding exercises. It's entirely
-client-side, and can be run on any web server.
+This is a set of coding exercises. They run in your browser, and can
+be run with or without a web server.
 
 ## Where can I try it?
 
@@ -30,5 +30,4 @@ State is stored using [local storage](http://en.wikipedia.org/wiki/Web_storage).
 ## What's next?
 
 - documentation
-- unit tests
 - more exercises
