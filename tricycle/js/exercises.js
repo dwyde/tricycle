@@ -37,7 +37,7 @@ var EXERCISES = [
         this.number = 1423249;
         this.problem = 'Name a factor of ' + this.number + ' beside ' +
                        'itself and 1.';
-        this.hint = 'There is only one answer.',
+        this.hint = 'There is only one answer.';
         this.solve = function(answer) {
             var integer = parseInt(answer);
             return !answer.match(/\D/) && integer !== this.number &&
@@ -60,8 +60,8 @@ var EXERCISES = [
         this.lower = 1;
         this.upper = 20;
         this.problem = 'Find the product of all even integers from ' +
-                 this.lower + ' to ' + this.upper + ', inclusive.',
-        this.hint = 'For even numbers, n % 2 == 0.',
+                 this.lower + ' to ' + this.upper + ', inclusive.';
+        this.hint = 'For even numbers, n % 2 == 0.';
         this.solve = function(answer) {
             var product = 1;
             for (var i = this.lower; i <= this.upper; i++) {
@@ -80,7 +80,7 @@ var EXERCISES = [
         this.text = 'Why did the orange roll back down the hill? ' +
                     'Because she was out of juice.';
         this.hint = "Use Python's `len(text)`, JavaScript's " +
-                    "`text.length`, or the Unix shell's `wc`.",
+                    "`text.length`, or the Unix shell's `wc`.";
         this.solve = function(answer) {
             return answer == this.text.length
         }
@@ -88,7 +88,7 @@ var EXERCISES = [
     
     new function() {
         this.title = 'Word Count';
-        this.problem = 'How many words are in the following string?',
+        this.problem = 'How many words are in the following string?';
         this.text = 'Why was the skeleton afraid to cross the road? ' +
                     'Because he had no guts.';
         this.hint = 'Split the string on spaces, and count the ' +
@@ -123,11 +123,11 @@ var EXERCISES = [
     
     new function() {
         this.title = 'Reverse';
-        this.problem = 'Reverse the following string:',
+        this.problem = 'Reverse the following string:';
         this.text = 'How many tickles does it take to make an ' +
                     'octopus laugh? Ten tickles.';
         this.hint = 'One strategy: loop over the characters in ' +
-              'reverse order, and build a new string.',
+              'reverse order, and build a new string.';
         this.solve = function(answer) {
             reversed = '';
             for (var i = this.text.length - 1; i >= 0; i--) {
@@ -188,7 +188,7 @@ var EXERCISES = [
             734, 549, 835, 215, 138, 527, 398, 855, 930, 120, 608, 944,
             310, 422, 749, 844
         ];
-        this.text = this.numbers.join(', '),
+        this.text = this.numbers.join(', ');
         this.hint = 'Loop through, and keep track of the leader.';
         this.solve = function(answer) {
             var current,
@@ -205,7 +205,7 @@ var EXERCISES = [
     },
     
     new function() {
-        this.title = 'Duplicate',
+        this.title = 'Duplicate';
         this.problem = 'Which number appears twice in the following ' +
                        'list?';
         this.numbers = [
