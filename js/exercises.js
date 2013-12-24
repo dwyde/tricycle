@@ -154,7 +154,15 @@ var EXERCISES = [
 			44, 0, 86, 91, 2, 72, 6, 65
 		];
         this.text = this.numbers.join(', ');
-        this.hint = 'The integers from 0 to 99 add up to 4950.';
+        var that = this;
+        this.hint = 'The integers from ' + this.lower + ' to ' + 
+                    this.upper + ' add up to ' + (function() {
+                        var count = 0;
+                        for (var i = that.lower; i <= that.upper; i++) {
+                            count += i;
+                        }
+                        return count;
+                    }()) + '.';
         this.solve = function(answer) {
             var integer = parseInt(answer);
             return !answer.match(/\D/) &&
