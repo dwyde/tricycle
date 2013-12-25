@@ -79,6 +79,10 @@
             exercise.hex = '0xA';
             check(exercise, ['10'], ['0xA', 'a']);
         },
+        'Binary': function(exercise) {
+            exercise.number = 23;
+            check(exercise, ['10111'], ['23']);
+        },
     };
 
     /** Loop over all exercises, and execute a test for each. */

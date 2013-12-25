@@ -254,7 +254,7 @@ var EXERCISES = [
         this.hint = 'Use `text.replace()` in Python or JavaScript.';
         this.solve = function(answer) {
             var regex = new RegExp(this.character, 'g');
-            return answer == this.text.replace(regex, '');
+            return answer == this.text.replace(regex, '')
         }
                     
     },
@@ -267,7 +267,19 @@ var EXERCISES = [
         this.hint = 'Print the hexadecimal number, without quotes.';
         this.solve = function(answer) {
             return !answer.match(/\D/) && 
-                   parseInt(answer) == parseInt(this.hex);
+                   parseInt(answer) == parseInt(this.hex)
+        }
+    },
+    
+    new function() {
+        this.title = 'Binary';
+        this.number = 42;
+        this.problem = 'What is the binary representation of the ' +
+                       'decimal number ' + this.number + '?';
+        this.hint = "Use Python's `int(numString, base)`' or " +
+                    "JavaScript's `num.toString(base)`.";
+        this.solve = function(answer) {
+            return answer == this.number.toString(2);
         }
     },
 ];
