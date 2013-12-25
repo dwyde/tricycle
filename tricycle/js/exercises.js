@@ -258,4 +258,16 @@ var EXERCISES = [
         }
                     
     },
+    
+    new function() {
+        this.title = 'Hex';
+        this.hex = '0xBEEF';
+        this.problem = 'What is the integer representation of the ' +
+                       'hexadecimal number ' + this.hex + '?';
+        this.hint = 'Print the hexadecimal number, without quotes.';
+        this.solve = function(answer) {
+            return !answer.match(/\D/) && 
+                   parseInt(answer) == parseInt(this.hex);
+        }
+    },
 ];

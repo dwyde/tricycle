@@ -75,6 +75,10 @@
             exercise.character = 'c';
             check(exercise, ['ab ab'], ['ab abc']);
         },
+        'Hex': function(exercise) {
+            exercise.hex = '0xA';
+            check(exercise, ['10'], ['0xA', 'a']);
+        },
     };
 
     /** Loop over all exercises, and execute a test for each. */
