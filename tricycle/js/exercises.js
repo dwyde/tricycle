@@ -282,4 +282,17 @@ var EXERCISES = [
             return answer == this.number.toString(2);
         }
     },
+    
+    new function() {
+        this.title = 'Power';
+        this.number = 3;
+        this.power = 14;
+        this.problem = 'What is ' + this.number + ' raised to the ' +
+                       this.power + 'th power?';
+        this.hint = "Use JavaScript's `Math.pow()` or Python's " +
+                    "`**` operator.";
+        this.solve = function(answer) {
+            return answer == Math.pow(this.number, this.power);
+        }
+    },
 ];

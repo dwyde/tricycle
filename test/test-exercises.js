@@ -83,6 +83,11 @@
             exercise.number = 23;
             check(exercise, ['10111'], ['23']);
         },
+        'Power': function(exercise) {
+            exercise.number = 2;
+            exercise.power = 4;
+            check(exercise, ['16'], ['8', '32']);
+        },
     };
 
     /** Loop over all exercises, and execute a test for each. */
