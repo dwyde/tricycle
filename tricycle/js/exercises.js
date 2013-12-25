@@ -243,4 +243,19 @@ var EXERCISES = [
             return answer == this.text.toUpperCase();
         }
     },
+    
+    new function() {
+        this.title = 'Remove';
+        this.character = 'e';
+        this.problem = 'Remove all instances of the character "'+
+                       this.character + '" from the following string.';
+        this.text = 'I scream, you scream, we all scream for ice ' +
+                    'cream.';
+        this.hint = 'Use `text.replace()` in Python or JavaScript.';
+        this.solve = function(answer) {
+            var regex = new RegExp(this.character, 'g');
+            return answer == this.text.replace(regex, '');
+        }
+                    
+    },
 ];

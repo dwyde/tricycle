@@ -70,6 +70,11 @@
             exercise.text = 'Hello, world!';
             check(exercise, ['HELLO, WORLD!'], ['Hello, world!']);
         },
+        'Remove': function(exercise) {
+            exercise.text = 'abc abc';
+            exercise.character = 'c';
+            check(exercise, ['ab ab'], ['ab abc']);
+        },
     };
 
     /** Loop over all exercises, and execute a test for each. */
