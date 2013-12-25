@@ -232,4 +232,15 @@ var EXERCISES = [
             return count == 2
         }
     },
+    
+    new function() {
+        this.title = 'Uppercase';
+        this.problem = 'Convert the following string to ALL CAPS.';
+        this.text = 'A word is worth a thousandth of a picture.';
+        this.hint = "Try Python's `text.upper()` or JavaScript's " +
+                    "`text.toUpperCase()`.";
+        this.solve = function(answer) {
+            return answer == this.text.toUpperCase();
+        }
+    },
 ];

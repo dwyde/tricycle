@@ -66,6 +66,10 @@
             exercise.numbers = [1, 2, 3, 2, 4];
             check(exercise, ['2'], ['1', '3', '4']);
         },
+        'Uppercase': function(exercise) {
+            exercise.text = 'Hello, world!';
+            check(exercise, ['HELLO, WORLD!'], ['Hello, world!']);
+        },
     };
 
     /** Loop over all exercises, and execute a test for each. */
