@@ -75,6 +75,11 @@
             exercise.character = 'c';
             check(exercise, ['ab ab'], ['ab abc']);
         },
+        'Replace Digits': function(exercise) {
+            exercise.text = 'a123 d5f';
+            exercise.character = '!';
+            check(exercise, ['a!!! d!f'], ['a!23 d5f']);
+        },
         'Hex': function(exercise) {
             exercise.hex = '0xA';
             check(exercise, ['10'], ['0xA', 'a']);

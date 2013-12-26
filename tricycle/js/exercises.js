@@ -256,7 +256,20 @@ var EXERCISES = [
             var regex = new RegExp(this.character, 'g');
             return answer == this.text.replace(regex, '')
         }
-                    
+    },
+    
+    new function() {
+        this.title = 'Replace Digits';
+        this.character = '!';
+        this.problem = 'Replace each digit in the following string ' +
+                       'with a "' + this.character + '" character.';
+        this.text = 'She was born on 1970-01-01: an epoch birthday.';
+        this.hint = "Use Python's `re.sub()`, or JavaScript's " +
+                    "`text.replace()` with a regular expression as " +
+                    "the first argument.";
+        this.solve = function(answer) {
+            return answer == this.text.replace(/\d/g, this.character);
+        }
     },
     
     new function() {
