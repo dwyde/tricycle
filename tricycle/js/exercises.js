@@ -108,8 +108,8 @@ var EXERCISES = [
         this.text = 'And on that day, he learned why not to wear ' +
                     'socks with sandals. It was a difficult lesson, ' +
                     'but an extremely important one.';
-        this.hint = 'Loop over the characters, and keep a running ' +
-                    'count.';
+        this.hint = "Try Python's `text.count()`. Or, loop through " +
+                    "the characters, and keep a running count.";
         this.solve = function(answer) {
             var count = 0;
             for (var i = 0; i < this.text.length; i++) {
@@ -127,7 +127,8 @@ var EXERCISES = [
         this.text = 'How many tickles does it take to make an ' +
                     'octopus laugh? Ten tickles.';
         this.hint = 'One strategy: loop over the characters in ' +
-              'reverse order, and build a new string.';
+              'reverse order, and build a new string. Python also ' +
+              'provides a `reversed()` function.';
         this.solve = function(answer) {
             reversed = '';
             for (var i = this.text.length - 1; i >= 0; i--) {
