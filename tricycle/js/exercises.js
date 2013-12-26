@@ -190,18 +190,11 @@ var EXERCISES = [
             310, 422, 749, 844
         ];
         this.text = this.numbers.join(', ');
-        this.hint = 'Loop through, and keep track of the leader.';
+        this.hint = "Use Python's `max()` or JavaScript's " +
+                    "`Math.max()`. Or, loop through and keep track " +
+                    "of the leader.";
         this.solve = function(answer) {
-            var current,
-                max = Number.MIN_VALUE;
-            
-            for (var i = 0; i < this.numbers.length; i++) {
-                current = this.numbers[i];
-                if (current > max) {
-                    max = current;
-                }
-            }
-            return answer == max
+            return answer == Math.max.apply(null, this.numbers);
         }
     },
     
