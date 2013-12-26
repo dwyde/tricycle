@@ -97,6 +97,9 @@
             exercise.time = 1388019522;
             check(exercise, ['2013'], ['2012', '2014']);
         },
+        'Color': function(exercise) {
+            check(exercise, ['Orange', 'orange', 'ORANGE'], ['yellow']);
+        },
     };
 
     /** Loop over all exercises, and execute a test for each. */

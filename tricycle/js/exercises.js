@@ -324,4 +324,14 @@ var EXERCISES = [
             return answer == date.getYear() + 1900
         }
     },
+        
+    new function() {
+        this.title = 'Color';
+        this.problem = 'What color of the rainbow do you get when ' +
+                       'you mix #FF0000 with #FFFF00?';
+        this.hint = 'Colors can be represented as hexadecimal numbers.';
+        this.solve = function(answer) {
+            return answer.toLowerCase() == 'orange'
+        }
+    }
 ];
