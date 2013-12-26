@@ -79,7 +79,7 @@
             exercise.hex = '0xA';
             check(exercise, ['10'], ['0xA', 'a']);
         },
-        'Binary': function(exercise) {
+        'To Binary': function(exercise) {
             exercise.number = 23;
             check(exercise, ['10111'], ['23']);
         },

@@ -272,7 +272,7 @@ var EXERCISES = [
     },
     
     new function() {
-        this.title = 'Binary';
+        this.title = 'To Binary';
         this.number = 42;
         this.problem = 'What is the binary representation of the ' +
                        'decimal number ' + this.number + '?';
