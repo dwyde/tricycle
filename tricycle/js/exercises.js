@@ -340,7 +340,8 @@ var EXERCISES = [
         this.title = 'Count Digits';
         this.problem = 'How many digits appear in the following ' +
                        'string?';
-        this.text = '65Vf9gFo0ke8lTvGUV3A7ift4Ps7GYLQktGVBVFa7sG1NjxMY';
+        this.text = 'bbvMvC7Kqq vmV0FFT2TQ WQD9L8bi3E JJYxFNUy0w ' +
+                    'g6Oo8EetMT No50B342Ee OUlJWaQ7xz 2O9RnR0KgY';
         this.hint = 'Loop through the characters, and count how many ' +
                     'match the regular expression "\d"';
         this.solve = function(answer) {
