@@ -21,7 +21,7 @@ header h1 {
 }
 
 #exercise-menu {
-    margin:0 2em 0 1em;
+    margin:0 2em 2em 2em;
 }
 
 #exercise-menu ul {
@@ -42,7 +42,7 @@ header h1 {
 #exercise-menu a {
     text-decoration:none;
     color: #000;
-    padding:.2em 1em;
+    padding:.3em 1em;
     display:block;
 }
 
@@ -68,7 +68,7 @@ header h1 {
 }
 
 #exercise-display .wrap {
-    padding: .2em 1em 1em;
+    padding: 0 1em 1em;
 }
 
 #exercise-display a {
