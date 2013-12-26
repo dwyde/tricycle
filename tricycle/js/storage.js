@@ -1,3 +1,11 @@
+/** 
+ * 
+ * Helper code for dealing with localStorage.
+ * 
+ * Data is serialized to a JSON string before being stored in a
+ * single localStorage key.
+ * 
+ */
 var STORAGE = (function() {
     
     var storageKey = 'tricycle';

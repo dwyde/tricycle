@@ -1,17 +1,36 @@
+/**
+ * 
+ * AngularJS code for Tricycle.
+ * 
+ */
+ 
+/**
+ * Top-level AngularJS controlller.
+ */
 var tricycleApp = angular.module('tricycleApp', []);
  
 tricycleApp.controller('ExerciseMenuCtrl', function ($scope) {
     
+    /**
+     * Perform initial setup.
+     */
     $scope.exercises = EXERCISES;
     $scope.current = EXERCISES[0];
     readCorrect();
     resetExercise();
     
+    /**
+     * Display an exercise in the main content area.
+     */
     $scope.showExercise = function(exercise) {
         $scope.current = exercise;
         resetExercise();
     };
     
+    /** 
+     * Check a user-supplied answer, and possibly mark an
+     * exercise correct.
+     */
     $scope.solve = function(answer) {
         var result = $scope.current.solve(answer);
         if (result) {
@@ -21,6 +40,9 @@ tricycleApp.controller('ExerciseMenuCtrl', function ($scope) {
         return result;
     };
     
+    /**
+     * Mark all previously-answered questions as correct.
+     */
     function readCorrect() {
         var exercise;
         
@@ -32,6 +54,9 @@ tricycleApp.controller('ExerciseMenuCtrl', function ($scope) {
         }
     }
     
+    /**
+     * Reset the exercise display's state.
+     */
     function resetExercise() {
         $scope.answer = '';
         $scope.showHint = false;
