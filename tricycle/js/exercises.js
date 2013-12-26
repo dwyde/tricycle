@@ -284,6 +284,25 @@ var EXERCISES = [
     },
     
     new function() {
+        this.title = 'From Binary';
+        this.binary = '1110111';
+        this.problem = 'What is the decimal representation of the ' +
+                       'binary number ' + this.binary + '?';
+        this.hint = "Use Python's `int(numString, base)`, or do the " +
+                    "math in JavaScript.";
+        this.solve = function(answer) {
+            var total = 0,
+                length = this.binary.length;
+            for (var i = length - 1; i >= 0; i--) {
+                if (this.binary.charAt(i) == 1) {
+                    total += Math.pow(2, length - i - 1);
+                }
+            }
+            return answer == total
+        }
+    },
+    
+    new function() {
         this.title = 'Power';
         this.number = 3;
         this.power = 14;

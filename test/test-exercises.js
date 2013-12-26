@@ -83,6 +83,10 @@
             exercise.number = 23;
             check(exercise, ['10111'], ['23']);
         },
+        'From Binary': function(exercise) {
+            exercise.binary = '1101';
+            check(exercise, ['13'], ['1101']);
+        },
         'Power': function(exercise) {
             exercise.number = 2;
             exercise.power = 4;
