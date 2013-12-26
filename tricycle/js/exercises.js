@@ -1,8 +1,18 @@
 /**
- * Notes:
+ *
+ * Exercises for Tricycle.
  * 
- * - document fields: title, problem, hint, solve(), text (optional)
- * - to solve, `answer` will be a string
+ * Each exercise is an object that contains the following fields:
+ * 
+ * - title: the user-facing name for an exercise
+ * - problem: a question or problem statement
+ * - hint: a clue - either a methodology or hepful library functions
+ * - solve: a function that takes one argument: a user-supplied
+ *          answer string. Returns `true` if the answer is correct, and
+ *          `false` otherwise.
+ * - text (optional): a paragraph of text to display below the problem
+ * - <helper variables>: extra data needed for a particular exercise
+ * 
  */
 var EXERCISES = [
     new function() {
