@@ -93,6 +93,10 @@
             exercise.text = 'One two.';
             check(exercise, ['t'], [' ', 'w']);
         },
+        'Date': function(exercise) {
+            exercise.time = 1388019522;
+            check(exercise, ['2013'], ['2012', '2014']);
+        },
     };
 
     /** Loop over all exercises, and execute a test for each. */

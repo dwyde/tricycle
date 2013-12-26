@@ -309,4 +309,19 @@ var EXERCISES = [
             return answer == this.text.charAt(this.position - 1);
         }
     },
+    
+    new function() {
+        this.title = 'Date';
+        this.time = 928558800;
+        this.problem = 'In which year did the Unix timestamp ' +
+                       this.time + ' (seconds) occur?';
+        this.hint = "Note that JavaScript's `date.getTime()` uses " +
+                    "milliseconds, not seconds.";
+        this.solve = function(answer) {
+            // JavaScript time-since-epoch uses milliseconds, and
+            // date.getYear() is years since 1900.
+            var date = new Date(this.time * 1000);
+            return answer == date.getYear() + 1900
+        }
+    },
 ];
