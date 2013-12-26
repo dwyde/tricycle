@@ -343,6 +343,25 @@ var EXERCISES = [
     },
     
     new function() {
+        this.title = 'Count Digits';
+        this.problem = 'How many digits appear in the following ' +
+                       'string?';
+        this.text = '65Vf9gFo0ke8lTvGUV3A7ift4Ps7GYLQktGVBVFa7sG1NjxMY';
+        this.hint = 'Loop through the characters, and count how many ' +
+                    'match the regular expression "\d"';
+        this.solve = function(answer) {
+            var count = 0;
+                pattern = /\d/;
+            for (var i = 0; i < this.text.length; i++) {
+                if (this.text.charAt(i).match(pattern)) {
+                    count += 1;
+                }
+            }
+            return answer == count
+        }
+    },
+    
+    new function() {
         this.title = 'Date';
         this.time = 928558800;
         this.problem = 'In which year did the Unix timestamp ' +

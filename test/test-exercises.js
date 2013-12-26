@@ -102,6 +102,10 @@
             exercise.text = 'One two.';
             check(exercise, ['t'], [' ', 'w']);
         },
+        'Count Digits': function(exercise) {
+            exercise.text = '123 abc 456';
+            check(exercise, ['6'], ['5', '7']);
+        },
         'Date': function(exercise) {
             exercise.time = 1388019522;
             check(exercise, ['2013'], ['2012', '2014']);
