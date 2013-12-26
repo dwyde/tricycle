@@ -88,6 +88,11 @@
             exercise.power = 4;
             check(exercise, ['16'], ['8', '32']);
         },
+        'Position': function(exercise) {
+            exercise.position = 5;
+            exercise.text = 'One two.';
+            check(exercise, ['t'], [' ', 'w']);
+        },
     };
 
     /** Loop over all exercises, and execute a test for each. */

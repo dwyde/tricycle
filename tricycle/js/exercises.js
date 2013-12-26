@@ -295,4 +295,18 @@ var EXERCISES = [
             return answer == Math.pow(this.number, this.power);
         }
     },
+    
+    new function() {
+        this.title = 'Position';
+        this.position = 24;
+        this.problem = 'What is the ' + this.position + 'th character' +
+                       ' in the following string?';
+        this.text = 'Row, row, row your boat, gently down the stream.';
+        this.hint = "Use JavaScript's `text.charAt` or Python's " +
+                    "string indexing (square brackets). Watch out " +
+                    "for 0-indexed strings!";
+        this.solve = function(answer) {
+            return answer == this.text.charAt(this.position - 1);
+        }
+    },
 ];
