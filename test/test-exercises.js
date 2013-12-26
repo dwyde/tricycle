@@ -23,12 +23,17 @@
             exercise.divisor = 3;
             check(exercise, ['2'], ['0']);
         },
-        'Factor': function(exercise) {
-            exercise.number = 10;
-            check(exercise, ['2', '5'], ['1', '10', '20']);
+        'Power': function(exercise) {
+            exercise.number = 2;
+            exercise.power = 4;
+            check(exercise, ['16'], ['8', '32']);
         },
         'Digit of Pi': function(exercise) {
             check(exercise, ['2'], ['9', '6']);
+        },
+        'Factor': function(exercise) {
+            exercise.number = 10;
+            check(exercise, ['2', '5'], ['1', '10', '20']);
         },
         'Evens Product': function(exercise) {
             exercise.lower = 3;
@@ -91,11 +96,6 @@
         'From Binary': function(exercise) {
             exercise.binary = '1101';
             check(exercise, ['13'], ['1101']);
-        },
-        'Power': function(exercise) {
-            exercise.number = 2;
-            exercise.power = 4;
-            check(exercise, ['16'], ['8', '32']);
         },
         'Position': function(exercise) {
             exercise.position = 5;
