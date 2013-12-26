@@ -276,8 +276,8 @@ var EXERCISES = [
         this.number = 42;
         this.problem = 'What is the binary representation of the ' +
                        'decimal number ' + this.number + '?';
-        this.hint = "Use Python's `int(numString, base)` or " +
-                    "JavaScript's `num.toString(base)`.";
+        this.hint = "Use Python's `bin()` or JavaScript's " +
+                    "`num.toString(base)`.";
         this.solve = function(answer) {
             return answer == this.number.toString(2);
         }
