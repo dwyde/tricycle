@@ -30,4 +30,3 @@ State is stored using [local storage](http://en.wikipedia.org/wiki/Web_storage).
 ## What's next?
 
 - documentation
-- more exercises
