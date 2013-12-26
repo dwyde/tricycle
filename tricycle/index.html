@@ -14,7 +14,7 @@
         <div id="exercise-menu">
             <ul>
                 <li ng-repeat="exercise in exercises">
-                    <a href="#" ng-click="showExercise(exercise)"
+                    <a href="" ng-click="showExercise(exercise)"
                      ng-class="{correct: exercise.correct}">
                         {{exercise.title}}
                     </a>
@@ -39,7 +39,7 @@
                         Keep trying.
                     </p>
                 </div>
-                <a ng-click="showHint = !showHint" href="#">
+                <a ng-click="showHint = !showHint" href="">
                     Show hint
                 </a>
                 <div ng-switch on="showHint">
