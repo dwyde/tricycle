@@ -7,11 +7,28 @@ body {
 
 header h1 {
     font-size:2em;
-    margin: 0 0 1em;
+    margin: 0;
     background: #4483AF;
     color:#fff;
     padding: 0.5em;
     border-bottom:1px solid #000;
+}
+
+nav {
+    background: #fff;
+    border-bottom: 1px solid #000;
+    padding:.5em 0.5em 0;
+    margin:0;
+}
+
+nav a {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 5px 5px 0;
+    margin:0 0.25em 0;
+    background:#B6CCE5;
+    color:#000;
+    text-decoration:none;
 }
 
 #exercise-menu, #exercise-display {
@@ -21,7 +38,7 @@ header h1 {
 }
 
 #exercise-menu {
-    margin:0 2em 2em 2em;
+    margin: 2em;
 }
 
 #exercise-menu ul {
@@ -56,6 +73,7 @@ header h1 {
 
 #exercise-display {
     width:60%;
+    margin-top: 2em;
 }
 
 #exercise-display h1 {
