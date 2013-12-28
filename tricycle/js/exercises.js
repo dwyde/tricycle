@@ -14,7 +14,7 @@
  * - <helper variables>: extra data needed for a particular exercise
  * 
  */
-var EXERCISES = [
+var MATH_EXERCISES = [
     new function() {
         this.title = 'Multiplication';
         this.numbers = [12, 13, 14];
@@ -79,6 +79,49 @@ var EXERCISES = [
     },
     
     new function() {
+        this.title = 'Hex';
+        this.hex = '0xBEEF';
+        this.problem = 'What is the integer representation of the ' +
+                       'hexadecimal number ' + this.hex + '?';
+        this.hint = 'Print the hexadecimal number, without quotes.';
+        this.solve = function(answer) {
+            return !answer.match(/\D/) && 
+                   parseInt(answer) == parseInt(this.hex)
+        }
+    },
+    
+    new function() {
+        this.title = 'To Binary';
+        this.number = 42;
+        this.problem = 'What is the binary representation of the ' +
+                       'decimal number ' + this.number + '?';
+        this.hint = "Use Python's `bin()` or JavaScript's " +
+                    "`num.toString(base)`.";
+        this.solve = function(answer) {
+            return answer == this.number.toString(2);
+        }
+    },
+    
+    new function() {
+        this.title = 'From Binary';
+        this.binary = '1110111';
+        this.problem = 'What is the decimal representation of the ' +
+                       'binary number ' + this.binary + '?';
+        this.hint = "Use Python's `int(numString, base)`, or do the " +
+                    "math in JavaScript.";
+        this.solve = function(answer) {
+            var total = 0,
+                length = this.binary.length;
+            for (var i = length - 1; i >= 0; i--) {
+                if (this.binary.charAt(i) == 1) {
+                    total += Math.pow(2, length - i - 1);
+                }
+            }
+            return answer == total
+        }
+    },
+    
+    new function() {
         this.title = 'Evens Product';
         this.lower = 1;
         this.upper = 20;
@@ -95,7 +138,9 @@ var EXERCISES = [
             return !answer.match(/\D/) &&  parseInt(answer) === product
         }
     },
-    
+];
+
+var WORD_EXERCISES = [
     new function() {
         this.title = 'Character Count';
         this.problem = 'How many characters are in the following ' +
@@ -161,6 +206,81 @@ var EXERCISES = [
         }
     },
     
+    new function() {
+        this.title = 'Uppercase';
+        this.problem = 'Convert the following string to ALL CAPS.';
+        this.text = 'A word is worth a thousandth of a picture.';
+        this.hint = "Try Python's `text.upper()` or JavaScript's " +
+                    "`text.toUpperCase()`.";
+        this.solve = function(answer) {
+            return answer == this.text.toUpperCase();
+        }
+    },
+    
+    new function() {
+        this.title = 'Remove';
+        this.character = 'e';
+        this.problem = 'Remove all instances of the character "'+
+                       this.character + '" from the following string.';
+        this.text = 'I scream, you scream, we all scream for ice ' +
+                    'cream.';
+        this.hint = 'Use `text.replace()` in Python or JavaScript.';
+        this.solve = function(answer) {
+            var regex = new RegExp(this.character, 'g');
+            return answer == this.text.replace(regex, '')
+        }
+    },
+    
+    new function() {
+        this.title = 'Replace Digits';
+        this.character = '!';
+        this.problem = 'Replace each digit in the following string ' +
+                       'with a "' + this.character + '" character.';
+        this.text = 'She was born on 1970-01-01: an epoch birthday.';
+        this.hint = "Use Python's `re.sub()`, or JavaScript's " +
+                    "`text.replace()` with a regular expression as " +
+                    "the first argument.";
+        this.solve = function(answer) {
+            return answer == this.text.replace(/\d/g, this.character);
+        }
+    },
+    
+    new function() {
+        this.title = 'Position';
+        this.position = 24;
+        this.problem = 'What is the ' + this.position + 'th character' +
+                       ' in the following string?';
+        this.text = 'Row, row, row your boat, gently down the stream.';
+        this.hint = "Use JavaScript's `text.charAt` or Python's " +
+                    "string indexing (square brackets). Watch out " +
+                    "for 0-indexed strings!";
+        this.solve = function(answer) {
+            return answer == this.text.charAt(this.position - 1);
+        }
+    },
+    
+    new function() {
+        this.title = 'Count Digits';
+        this.problem = 'How many digits appear in the following ' +
+                       'string?';
+        this.text = 'bbvMvC7Kqq vmV0FFT2TQ WQD9L8bi3E JJYxFNUy0w ' +
+                    'g6Oo8EetMT No50B342Ee OUlJWaQ7xz 2O9RnR0KgY';
+        this.hint = 'Loop through the characters, and count how many ' +
+                    'match the regular expression "\d"';
+        this.solve = function(answer) {
+            var count = 0;
+                pattern = /\d/;
+            for (var i = 0; i < this.text.length; i++) {
+                if (this.text.charAt(i).match(pattern)) {
+                    count += 1;
+                }
+            }
+            return answer == count
+        }
+    },
+];
+
+var MISC_EXERCISES = [
     new function() {
         this.title = 'Missing';
         this.lower = 0;
@@ -251,122 +371,6 @@ var EXERCISES = [
     },
     
     new function() {
-        this.title = 'Uppercase';
-        this.problem = 'Convert the following string to ALL CAPS.';
-        this.text = 'A word is worth a thousandth of a picture.';
-        this.hint = "Try Python's `text.upper()` or JavaScript's " +
-                    "`text.toUpperCase()`.";
-        this.solve = function(answer) {
-            return answer == this.text.toUpperCase();
-        }
-    },
-    
-    new function() {
-        this.title = 'Remove';
-        this.character = 'e';
-        this.problem = 'Remove all instances of the character "'+
-                       this.character + '" from the following string.';
-        this.text = 'I scream, you scream, we all scream for ice ' +
-                    'cream.';
-        this.hint = 'Use `text.replace()` in Python or JavaScript.';
-        this.solve = function(answer) {
-            var regex = new RegExp(this.character, 'g');
-            return answer == this.text.replace(regex, '')
-        }
-    },
-    
-    new function() {
-        this.title = 'Replace Digits';
-        this.character = '!';
-        this.problem = 'Replace each digit in the following string ' +
-                       'with a "' + this.character + '" character.';
-        this.text = 'She was born on 1970-01-01: an epoch birthday.';
-        this.hint = "Use Python's `re.sub()`, or JavaScript's " +
-                    "`text.replace()` with a regular expression as " +
-                    "the first argument.";
-        this.solve = function(answer) {
-            return answer == this.text.replace(/\d/g, this.character);
-        }
-    },
-    
-    new function() {
-        this.title = 'Hex';
-        this.hex = '0xBEEF';
-        this.problem = 'What is the integer representation of the ' +
-                       'hexadecimal number ' + this.hex + '?';
-        this.hint = 'Print the hexadecimal number, without quotes.';
-        this.solve = function(answer) {
-            return !answer.match(/\D/) && 
-                   parseInt(answer) == parseInt(this.hex)
-        }
-    },
-    
-    new function() {
-        this.title = 'To Binary';
-        this.number = 42;
-        this.problem = 'What is the binary representation of the ' +
-                       'decimal number ' + this.number + '?';
-        this.hint = "Use Python's `bin()` or JavaScript's " +
-                    "`num.toString(base)`.";
-        this.solve = function(answer) {
-            return answer == this.number.toString(2);
-        }
-    },
-    
-    new function() {
-        this.title = 'From Binary';
-        this.binary = '1110111';
-        this.problem = 'What is the decimal representation of the ' +
-                       'binary number ' + this.binary + '?';
-        this.hint = "Use Python's `int(numString, base)`, or do the " +
-                    "math in JavaScript.";
-        this.solve = function(answer) {
-            var total = 0,
-                length = this.binary.length;
-            for (var i = length - 1; i >= 0; i--) {
-                if (this.binary.charAt(i) == 1) {
-                    total += Math.pow(2, length - i - 1);
-                }
-            }
-            return answer == total
-        }
-    },
-    
-    new function() {
-        this.title = 'Position';
-        this.position = 24;
-        this.problem = 'What is the ' + this.position + 'th character' +
-                       ' in the following string?';
-        this.text = 'Row, row, row your boat, gently down the stream.';
-        this.hint = "Use JavaScript's `text.charAt` or Python's " +
-                    "string indexing (square brackets). Watch out " +
-                    "for 0-indexed strings!";
-        this.solve = function(answer) {
-            return answer == this.text.charAt(this.position - 1);
-        }
-    },
-    
-    new function() {
-        this.title = 'Count Digits';
-        this.problem = 'How many digits appear in the following ' +
-                       'string?';
-        this.text = 'bbvMvC7Kqq vmV0FFT2TQ WQD9L8bi3E JJYxFNUy0w ' +
-                    'g6Oo8EetMT No50B342Ee OUlJWaQ7xz 2O9RnR0KgY';
-        this.hint = 'Loop through the characters, and count how many ' +
-                    'match the regular expression "\d"';
-        this.solve = function(answer) {
-            var count = 0;
-                pattern = /\d/;
-            for (var i = 0; i < this.text.length; i++) {
-                if (this.text.charAt(i).match(pattern)) {
-                    count += 1;
-                }
-            }
-            return answer == count
-        }
-    },
-    
-    new function() {
         this.title = 'Date';
         this.time = 928558800;
         this.problem = 'In which year did the Unix timestamp ' +
@@ -391,3 +395,18 @@ var EXERCISES = [
         }
     }
 ];
+
+EXERCISES = [
+    {
+        label: 'Math',
+        exercises: MATH_EXERCISES
+    },
+    {
+        label: 'Words',
+        exercises: WORD_EXERCISES
+    },
+    {
+        label: 'Miscellany',
+        exercises: MISC_EXERCISES
+    },
+]

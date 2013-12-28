@@ -11,6 +11,12 @@
         <header>
             <h1>Tricycle</h1>
         </header>
+        <div>
+            <a ng-repeat="group in exerciseGroups" href=""
+               ng-click="showGroup(group)">
+                {{group.label}}
+            </a>
+        </div>
         <div id="exercise-menu">
             <ul>
                 <li ng-repeat="exercise in exercises">
