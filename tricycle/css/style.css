@@ -18,12 +18,17 @@ nav {
     background: #fff;
     border-bottom: 1px solid #000;
     margin:0;
-    padding:0.5em;
+    padding:0.5em 1em;
 }
 
 nav a {
     color:#00f;
-    margin-right:0.5em;
+    margin-right:1em;
+}
+
+nav a.current {
+    font-weight:bold;
+    text-decoration:none;
 }
 
 #exercise-menu, #exercise-display {

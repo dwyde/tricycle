@@ -12,8 +12,10 @@
             <h1>Tricycle</h1>
         </header>
         <nav>
-            <a ng-repeat="group in exerciseGroups" href=""
-               ng-click="showGroup(group)">{{group.label}}</a>
+            <a ng-repeat="group in exerciseGroups"
+               ng-click="showGroup(group)"
+               ng-class="{current: group.exercises === exercises}"
+               href="">{{group.label}}</a>
         </nav>
         <div id="exercise-menu">
             <ul>
