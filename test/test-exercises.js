@@ -117,13 +117,22 @@
 
     /** Loop over all exercises, and execute a test for each. */
     (function() {
-        var exercise;
-        for (var i = 0; i < EXERCISES.length; i++) {
-            exercise = EXERCISES[i];
-            try {
-                solvers[exercise.title](exercise);
-            } catch (e) {
-                console.log('Missing test: ' + exercise.title + '.');   
+        var exercise,
+            groupedExercises,
+            i,
+            j;
+
+        for (i = 0; i < EXERCISES.length; i++) {
+            // Loop over exercise groups.
+            groupedExercises = EXERCISES[i].exercises;
+            for (j = 0; j < groupedExercises.length; j++) {
+                // Loop over exercises within a group.
+                exercise = groupedExercises[j];
+                try {
+                    solvers[exercise.title](exercise);
+                } catch (e) {
+                    console.log('Missing test: ' + exercise.title + '.');   
+                }
             }
         }
     }())    
