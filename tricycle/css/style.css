@@ -14,6 +14,10 @@ header h1 {
     border-bottom: 1px solid #000;
 }
 
+a:focus { 
+    outline: none; 
+}
+
 nav {
     background: #fff;
     border-bottom: 1px solid #000;
