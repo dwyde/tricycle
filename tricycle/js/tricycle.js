@@ -12,21 +12,20 @@ var tricycleApp = angular.module('tricycleApp', []);
 tricycleApp.controller('ExerciseMenuCtrl', function ($scope) {
     
     /**
-     * Display an exercise group.
-     */
-    $scope.showGroup = function(group) {
-        $scope.exercises = group.exercises;
-        $scope.current = $scope.exercises[0];
-        readCorrect();
-        resetExercise();
-    };
-    
-    /**
      * Display an exercise in the main content area.
      */
     $scope.showExercise = function(exercise) {
         $scope.current = exercise;
         resetExercise();
+    };
+    
+    /**
+     * Display an exercise group.
+     */
+    $scope.showGroup = function(group) {
+        $scope.exercises = group.exercises;
+        readCorrect();
+        $scope.showExercise($scope.exercises[0]);
     };
     
     /** 
