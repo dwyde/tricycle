@@ -21,7 +21,8 @@
             <ul>
                 <li ng-repeat="exercise in exercises">
                     <a href="" ng-click="showExercise(exercise)"
-                     ng-class="{correct: exercise.correct}">
+                     ng-class="{correct: exercise.correct,
+                     current: exercise === current}">
                         {{exercise.title}}
                     </a>
                 </li>

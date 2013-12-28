@@ -67,12 +67,13 @@ nav a.current {
     display:block;
 }
 
-#exercise-menu a:hover {
-    text-decoration:underline;
-}
-
 #exercise-menu a.correct {
     color: green;
+}
+
+#exercise-menu a.current {
+    font-weight:bold;
+    text-decoration:none;
 }
 
 #exercise-display {
