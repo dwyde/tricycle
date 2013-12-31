@@ -266,7 +266,7 @@ var WORD_EXERCISES = [
         this.text = 'bbvMvC7Kqq vmV0FFT2TQ WQD9L8bi3E JJYxFNUy0w ' +
                     'g6Oo8EetMT No50B342Ee OUlJWaQ7xz 2O9RnR0KgY';
         this.hint = 'Loop through the characters, and count how many ' +
-                    'match the regular expression "\d"';
+                    'match the regular expression "\\d".';
         this.solve = function(answer) {
             var count = 0;
                 pattern = /\d/;
