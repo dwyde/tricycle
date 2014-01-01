@@ -375,7 +375,7 @@ var MISC_EXERCISES = [
         this.time = 928558800;
         this.problem = 'In which year did the Unix timestamp ' +
                        this.time + ' (seconds) occur?';
-        this.hint = "Note that JavaScript's `date.getTime()` uses " +
+        this.hint = "Note that JavaScript's `Date` uses " +
                     "milliseconds, not seconds.";
         this.solve = function(answer) {
             // JavaScript time-since-epoch uses milliseconds, and
