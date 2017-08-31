@@ -7,7 +7,7 @@ be run with or without a web server.
 
 ## Where can I try it?
 
-[http://davidwyde.com/code/tricycle/](http://davidwyde.com/code/tricycle/)
+[http://dwyde.github.io/tricycle/tricycle/](http://dwyde.github.io/tricycle/tricycle/)
 
 ## Why did you do this?
 
